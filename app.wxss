@@ -1,0 +1,15 @@
+@import "/wxParse/wxParse.wxss";
+
+/**app.wxss**/
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 30rpx 0 88rpx 0;
+  box-sizing: border-box;
+} 
+.col-50{
+  display: inline-block;
+  width: 50%;
+}
