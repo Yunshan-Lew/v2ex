@@ -1,8 +1,9 @@
 # v2ex-wechat-weapp
 v2ex微信小程序
 
-![s1](https://github.com/Yunshan-Lew/v2ex/blob/master/image/view1.png)
-![s2](https://github.com/Yunshan-Lew/v2ex/blob/master/image/view2.png)
+![view1](https://github.com/Yunshan-Lew/v2ex/blob/master/image/view1.png)
+![view2](https://github.com/Yunshan-Lew/v2ex/blob/master/image/view2.png)
+![view3](https://github.com/Yunshan-Lew/v2ex/blob/master/image/view3.png)
 
 ## 微信小程序相关
 [微信小程序开发文档][wxdoc]
