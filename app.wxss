@@ -8,8 +8,25 @@
   justify-content: flex-start;
   padding: 30rpx 0 88rpx 0;
   box-sizing: border-box;
+}
+.container.custom{
+	display: block;
+	padding-top: 0;
 } 
 .col-50{
-  display: inline-block;
   width: 50%;
+}
+.col-33{
+  width: 33.33%;
+}
+.color-666{
+	color: #666;
+}
+.text-center{
+	text-align: center;
+}
+.ellip{
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }

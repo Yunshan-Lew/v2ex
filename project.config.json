@@ -11,7 +11,7 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.5",
+	"libVersion": "2.0.9",
 	"appid": "wx6116718111fd18ba",
 	"projectname": "V2EX",
 	"debugOptions": {

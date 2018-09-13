@@ -58,7 +58,43 @@ Page({
       }
     })
   },
-
+	
+	getNodes: function(request, cb){
+		var that = this
+    wx.request({
+      url: webapi[request](),
+      header: {
+          'Content-Type': 'application/json'
+      },
+      success: function(res) {
+        var resData = res.data
+				var nodesList = []
+				resData.sort(function(a, b){
+					return b.topics - a.topics 
+				})
+				resData.forEach(function(a, i){
+					if( i < 99 ) nodesList[i] = a
+				})
+        that.setData({
+          list: nodesList,
+          hidden: true,
+          errorCount: 0
+        })
+        if(cb && typeof cb === 'function'){
+          cb()
+        }
+      },
+      fail: function (err){
+        that.setData({
+          errorCount:that.data.errorCount + 1
+        })
+        if(that.data.errorCount < 4){
+          setTimeout(that.getNodes, 2000)
+        }
+      }
+    })
+	},
+	
   switchTab: function (e) {
     var that = this
     var currentTarget = e.currentTarget.id;
@@ -68,22 +104,30 @@ Page({
       })
       this.getData('getLatestTopic', function(){
         that.setData({
-          hidden: true,
           template: 'latest'
         })
       })
-      
-    }else if(currentTarget === 'hot' && this.data.template !== 'hot'){
+    }
+		else if(currentTarget === 'hot' && this.data.template !== 'hot'){
       this.setData({
         hidden:false
       })
       this.getData('getHotTopic',function(){
         that.setData({
-          hidden:true,
           template:'hot'
         })
       })
     }
+		else if( currentTarget === 'nodes' && this.data.template !== 'nodes' ){
+			this.setData({
+        hidden:false
+      })
+      this.getNodes('getAllNode', function(){
+        that.setData({
+          template: 'nodes'
+        })
+      })
+		}
   },
 
   bindViewTap: function(e) {

@@ -76,6 +76,7 @@
   width: 100%;
   background-color: #ffffff;
   border-top:1rpx solid #eeeeee;
+	display: flex;
 }
 .tab-cell{
   text-align: center;
@@ -87,4 +88,21 @@
 	color: #fff;
 	background-color: #000;
 }
-
+.node-avatar{
+	width: 120rpx;
+	height: 120rpx;
+}
+.node-box{ 
+	font-size: 24rpx;
+	float: left;
+	padding: 30rpx 0;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	box-sizing: border-box;
+}
+.node-box:nth-of-type(3){
+	border-right: 0;
+}
+.node-avatar + view{
+	font-weight: bold;
+}
