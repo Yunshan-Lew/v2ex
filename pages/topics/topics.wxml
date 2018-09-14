@@ -1,0 +1,28 @@
+<!--topics.wxml-->
+<view class="container">
+  <loading hidden="{{hidden}}">
+    加载中...
+  </loading>
+  <block wx:for="{{list}}" wx:for-item="article" wx:key="topicid">
+		<view class="list-item" data-href="{{ \"../content/content?topicid=\" + article.topicid }}" bindtap="linkTo"> 
+				<view class="list-info">
+					<view class="list-member">
+						<image class="list-avatar" mode="scaleToFill" src="{{article.avatar_normal}}" />
+						<view>
+							<view class="list-top">
+								<text class="list-username">{{article.username}}</text>
+							</view>
+							<view>
+								<text class="list-plus">{{article.last_modified}}</text>
+								<text class="list-plus"> · 回复 {{article.replies}}</text>
+							</view>
+						</view>
+					</view>
+					<view>
+						<text class="list-node">{{article.node_title}}</text>
+					</view>
+				</view>
+				<view class="list-title"><text>{{article.title}}</text></view>
+		</view>
+	</block>
+</view>

@@ -19,7 +19,7 @@ Page({
 			}
 		})
   },
-
+	
   getData: function (request, cb) {
     var that = this
     wx.request({
@@ -49,12 +49,7 @@ Page({
         }
       },
       fail: function (err){
-        that.setData({
-          errorCount:that.data.errorCount + 1
-        })
-        if(that.data.errorCount < 4){
-          setTimeout(that.getData,2000)
-        }
+        console.error('接口出错，请稍后再试。');
       }
     })
   },
@@ -85,12 +80,7 @@ Page({
         }
       },
       fail: function (err){
-        that.setData({
-          errorCount:that.data.errorCount + 1
-        })
-        if(that.data.errorCount < 4){
-          setTimeout(that.getNodes, 2000)
-        }
+        console.error('接口出错，请稍后再试。');
       }
     })
 	},
@@ -129,11 +119,11 @@ Page({
       })
 		}
   },
-
-  bindViewTap: function(e) {
-    var topicid = e.currentTarget.dataset.topicid;
-    wx.navigateTo({
-      url: `../content/content?topicid=${topicid}`
-    })
-  }
+	
+	linkTo: function(e){
+		var href = e.currentTarget.dataset.href;
+		wx.navigateTo({
+			url: href
+		})
+	}
 })

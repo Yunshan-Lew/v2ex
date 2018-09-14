@@ -13,7 +13,7 @@
 
 <template name="latest">
   <block wx:for="{{list}}" wx:for-item="article" wx:key="topicid">
-      <view class="list-item" data-title="{{article.title}}" data-content="{{article.content}}" data-topicid="{{article.topicid}}" bindtap="bindViewTap"> 
+      <view class="list-item" data-href="{{ \"../content/content?topicid=\" + article.topicid }}" bindtap="linkTo"> 
           <view class="list-info">
             <view class="list-member">
               <image class="list-avatar" mode="scaleToFill" src="{{article.avatar_normal}}" />
@@ -38,7 +38,7 @@
 
 <template name="hot">
   <block wx:for="{{list}}" wx:for-item="article" wx:key="topicid">
-		<view class="list-item" data-title="{{article.title}}" data-content="{{article.content}}" data-topicid="{{article.topicid}}" bindtap="bindViewTap"> 
+		<view class="list-item" data-href="{{ \"../content/content?topicid=\" + article.topicid }}" bindtap="linkTo"> 
 				<view class="list-info">
 					<view class="list-member">
 						<image class="list-avatar" mode="scaleToFill" src="{{article.avatar_normal}}" />
@@ -63,7 +63,7 @@
 
 <template name="nodes">
 	<block wx:for="{{list}}" wx:for-item="node" wx:key="id">
-		<view class="col-33 node-box text-center">
+		<view class="col-33 node-box text-center" data-href="{{ '../topics/topics?node_id=' + node.id }}" bindtap="linkTo">
 			<image class="node-avatar" src="{{ node.avatar_normal }}" />
 			<view class="ellip">{{ node.title }}</view>
 			<view class="color-666 ellip">帖子数：{{ node.topics }}</view>
