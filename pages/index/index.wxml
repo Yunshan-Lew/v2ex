@@ -28,7 +28,7 @@
               </view>
             </view>
             <view>
-							<text class="list-node">{{article.node_title}}</text>
+							<text class="topic-node">{{article.node_title}}</text>
 						</view>
           </view>
           <view class="list-title"><text>{{article.title}}</text></view>
@@ -53,7 +53,7 @@
 						</view>
 					</view>
 					<view>
-						<text class="list-node">{{article.node_title}}</text>
+						<text class="topic-node">{{article.node_title}}</text>
 					</view>
 				</view>
 				<view class="list-title"><text>{{article.title}}</text></view>

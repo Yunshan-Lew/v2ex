@@ -19,7 +19,7 @@
                 </view>
             </view>
             <view>
-							<text class="content-node">{{topic.node_title}}</text>
+							<text class="topic-node">{{topic.node_title}}</text>
 						</view>
         </view>
       
@@ -44,7 +44,7 @@
               </view>
             </view>
             <view class="reply-content">
-							<text>{{reply.content}}</text>
+							 <template is="wxParse" data="{{wxParseData: reply_items[index].nodes}}" />
 						</view>
         </view>
     </block>

@@ -30,3 +30,13 @@
 	text-overflow: ellipsis;
 	overflow: hidden;
 }
+.topic-node{
+  box-sizing: border-box;
+  display: block;
+  float: right;
+  padding: 8rpx;
+  border-radius: 6rpx;
+  background-color: #eeeeee; 
+  font-size:18rpx;
+  color: #999;
+}

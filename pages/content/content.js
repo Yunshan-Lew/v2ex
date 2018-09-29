@@ -60,16 +60,21 @@ Page({
       success: function(res) {
         var resData = res.data
         that.setData({
-          replies: resData.map(function(a){
+          replies: resData.map(function(a, i){
+						WxParse.wxParse('reply_content' + i, 'html', a.content_rendered, that, 15);
 						return {
               avatar: a.member.avatar_normal,
               username: a.member.username,
-              last_modified: utils.kindTime(a.last_modified),
-							content: a.content
+              last_modified: utils.kindTime(a.last_modified)
             }
           }),
           hidden: true,
         });
+				var reply_items = [];
+				resData.forEach(function(item, index){
+					reply_items.push(that.data['reply_content' + index])
+				});
+				that.setData({ reply_items: reply_items });
 			},
       fail: function (err){
         that.setData({

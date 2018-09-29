@@ -48,17 +48,6 @@
     font-size: 24rpx;
     color: #999999;
 }
-.content-node{
-  box-sizing: border-box;
-  display: block;
-  float: right;
-  padding: 8rpx;
-  border-radius: 6rpx;
-  background-color: #eeeeee; 
-  font-size:18rpx;
-  color: #aaaaaa;
-  font-weight: 100;
-}
 .content-title{
     font-size: 32rpx;
     padding-bottom: 40rpx;
