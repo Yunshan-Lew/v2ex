@@ -32,7 +32,7 @@ Page({
         that.setData({
           list: resData.map(function(a){
             return {
-              avatar_normal: a.member.avatar_normal,
+              avatar_normal: a.member.avatar_large,
               username: a.member.username,
               node_title: a.node.title,
               last_modified: utils.kindTime(a.last_modified),
